@@ -4,27 +4,6 @@ void main() {
   runApp(const NewApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Login Screen"),
-        ),
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          color: Colors.grey,
-        ),
-      ),
-    );
-  }
-}
-
 class NewApp extends StatefulWidget {
   const NewApp({Key? key}) : super(key: key);
 
@@ -39,6 +18,7 @@ class _NewAppState extends State<NewApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: "Login Screen",
       home: Scaffold(
         body: Container(
           width: double.infinity,
@@ -169,8 +149,10 @@ class _NewAppState extends State<NewApp> {
                             _password = value!;
                           },
                           obscureText: !_passwordVisible,
+                          autocorrect: false,
+                          enableSuggestions: false,
                           style: const TextStyle(color: Colors.black),
-                          keyboardType: TextInputType.emailAddress,
+                          keyboardType: TextInputType.visiblePassword,
                         ),
                     TextButton(
                             onPressed: () {},
